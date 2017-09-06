@@ -1,19 +1,23 @@
-/*
-Bayron Carrillo
-Carlos Fuentes
-Javier Lau
-*/
-
 #include<iostream>
 #include <string> // string, stoi
 #include <cctype> // isdigit
 #include <cstdlib> // atoi
 
+/*
+Actividad 3 - Testing y Calidad de software
+06/09/2017
+Integrantes:
+Bayron Carrillo
+Carlos Fuentes
+Javier Lau
+*/
+
 using namespace std;
-bool esNumerico(string);
+//bool esNumerico(string);
 
 int area (int num){
 	int a,b,l,h,peri,m,n,o,B,ar;
+	int pi=3;
 
 	
 	switch(num)
@@ -71,8 +75,8 @@ int area (int num){
 		cout<<"ingresa radio\n";
 		cin>>b;
 		
-		ar=(b*b)*3,14159;
-		peri=2*3,14159*b;
+		ar=(b*b)*pi;
+		peri=2*pi*b;
 		cout <<"area= "<<ar<<"\n";
 		cout <<"perimetro= "<<peri<<"\n";
 		break;
@@ -146,14 +150,16 @@ bool esNumerico(string linea)
      
        if (longitud == 0) { // Cuando el usuario pulsa ENTER
           P = false;
-       } else if (longitud == 1 && !isdigit(linea[0])) {
+       } else if ((longitud == 1) && (!isdigit(linea[0]))) {
           P = false;
        } else {
           int i;
-          if (linea[0] == '+' || linea[0] == '-')
-             i = 1;
-          else
-             i = 0;
+          if ((linea[0] == '+' )|| (linea[0] == '-')){
+          	i = 1;
+		  }
+         else{
+         	i = 0;
+		 }
      
           while (i < longitud) {
              if (!isdigit(linea[i])) {
@@ -167,7 +173,7 @@ bool esNumerico(string linea)
        return P;
     }
     
-int main (){
+int main (int argc, char*argv[]){
 	
 	string linea;
 	int num;
